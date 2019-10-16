@@ -8,9 +8,9 @@ pipeline {
         }
         stage('Build') { 
             steps {
-              withMaven(jdk: 'JDK', maven: 'Maven') {
-               sh 'mvn clean compile'
-             }
+                withMaven(jdk: 'JDK.1.8.0_222', maven: 'maven') {
+                    sh 'mvn clean compile'
+                }
             }
         }
         stage('Test') { 
