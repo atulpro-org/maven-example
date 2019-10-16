@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Code Checkout') { 
             steps {
-                git credentialsId: 'githubid', url: 'https://github.com/itrainpulsars/maven-example.git'
+                git credentialsId: 'githubid', url: 'https://github.com/atulpro-org/maven-example.git/'
             }
         }
         stage('Build') { 
