@@ -15,14 +15,14 @@ pipeline {
         }
         stage('Test') { 
             steps {
-               withMaven(jdk: 'JDK', maven: 'Maven') {
+               withMaven(jdk: 'JDK.1.8.0_222', maven: 'Maven') {
                sh 'mvn test'
              }  
             }
         }
         stage('Package') { 
             steps {
-              withMaven(jdk: 'JDK', maven: 'Maven') {
+              withMaven(jdk: 'JDK.1.8.0_222', maven: 'Maven') {
                sh 'mvn package'
              }  
             }
