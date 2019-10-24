@@ -20,6 +20,17 @@ pipeline {
              }  
             }
         }
+        stage('CodeAnalysis') { 
+            steps {
+               withMaven(jdk: 'JDK.1.8.0_222', maven: 'maven') {
+               sh 'mvn verify sonar:sonar \
+                -Dsonar.projectKey=atulpro-org.maven-example \
+                -Dsonar.organization=itrainwo \
+                -Dsonar.host.url=https://sonarcloud.io \
+                -Dsonar.login=ae48572f01196661f817ce2cc45b7a84f2dcb0ae'
+                }  
+            }
+        }
         stage('Package') { 
             steps {
               withMaven(jdk: 'JDK.1.8.0_222', maven: 'maven') {
